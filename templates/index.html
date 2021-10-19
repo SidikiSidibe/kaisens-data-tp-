@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Api detect toxicity twitter posts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>
+    <h1 align="center">Python Flask Api : détection du taux de toxicité des posts twitter.</h1>
+    </p>
+    <div class="container">
+        <div class="row">
+            <h2>Veillez entrer le mot clé des posts à rechercher</h2>
+            <form method="post" action="/" enctype="multipart/form-data">
+                <dl>
+                    <p>
+                        <input type="text" name="text" class="form-control" autocomplete="off" required placeholder="enter keyword example : covid19">
+                    </p>
+                </dl>
+                <p>
+                    <input type="submit" value="Send" class="btn btn-info">
+                </p>
+            </form>
+        </div>
+        <div class="row mt-5">
+            <h2>Résultats toxicité des posts twitter</h2>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <table id="data" class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Text</th>
+                        <th>Toxicity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for posts in jsnObj %}
+                        <tr>
+                          <td>{{ posts.text }}</td>
+                          <td>{{ posts.toxicity }}</td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

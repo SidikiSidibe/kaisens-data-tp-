@@ -1,0 +1,8 @@
+###
+POST http://localhost:5000/toxicityDetection
+Content-Type: application/json
+Accept: application/json
+
+{
+    "keyword":"covid19"
+}
